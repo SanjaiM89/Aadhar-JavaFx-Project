@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="app.controller.FormController" spacing="20" alignment="TOP_CENTER"
+      styleClass="form-container" prefWidth="800">
+    <padding>
+        <Insets top="20" bottom="20" left="20" right="20"/>
+    </padding>
+
+    <!-- Title -->
+    <Label text="Aadhar Card Registration" styleClass="title"/>
+
+    <!-- Two-Column Layout -->
+    <GridPane hgap="20" vgap="20">
+        <!-- Left Column: Personal Identity and Parental Details -->
+        <VBox spacing="10" GridPane.columnIndex="0" GridPane.rowIndex="0" prefWidth="400">
+            <!-- Personal Identity Section -->
+            <VBox spacing="10">
+                <Label text="Personal Identity" styleClass="section-title"/>
+                <GridPane hgap="10" vgap="10">
+                    <Label text="First Name:" GridPane.columnIndex="0" GridPane.rowIndex="0" styleClass="field-label"/>
+                    <TextField fx:id="firstNameField" promptText="First Name" GridPane.columnIndex="1" GridPane.rowIndex="0" styleClass="field-input"/>
+
+                    <Label text="Last Name:" GridPane.columnIndex="0" GridPane.rowIndex="1" styleClass="field-label"/>
+                    <TextField fx:id="lastNameField" promptText="Last Name" GridPane.columnIndex="1" GridPane.rowIndex="1" styleClass="field-input"/>
+
+                    <Label text="Date of Birth:" GridPane.columnIndex="0" GridPane.rowIndex="2" styleClass="field-label"/>
+                    <DatePicker fx:id="dobPicker" promptText="Date of Birth" GridPane.columnIndex="1" GridPane.rowIndex="2" styleClass="field-input"/>
+
+                    <Label text="Gender:" GridPane.columnIndex="0" GridPane.rowIndex="3" styleClass="field-label"/>
+                    <ComboBox fx:id="genderCombo" promptText="Select Gender" GridPane.columnIndex="1" GridPane.rowIndex="3" styleClass="field-input"/>
+
+                    <Label text="Marital Status:" GridPane.columnIndex="0" GridPane.rowIndex="4" styleClass="field-label"/>
+                    <ComboBox fx:id="maritalStatusCombo" promptText="Marital Status" GridPane.columnIndex="1" GridPane.rowIndex="4" styleClass="field-input"/>
+
+                    <Label fx:id="spouseNameLabel" text="Spouse Name:" GridPane.columnIndex="0" GridPane.rowIndex="5" styleClass="field-label" visible="false" managed="false"/>
+                    <TextField fx:id="spouseNameField" promptText="Spouse Name" GridPane.columnIndex="1" GridPane.rowIndex="5" styleClass="field-input" visible="false" managed="false"/>
+                </GridPane>
+            </VBox>
+
+            <!-- Parental Details Section -->
+            <VBox spacing="10">
+                <Label text="Parental Details" styleClass="section-title"/>
+                <GridPane hgap="10" vgap="10">
+                    <Label text="Father's Name:" GridPane.columnIndex="0" GridPane.rowIndex="0" styleClass="field-label"/>
+                    <TextField fx:id="fatherNameField" promptText="Father's Name" GridPane.columnIndex="1" GridPane.rowIndex="0" styleClass="field-input"/>
+
+                    <Label text="Mother's Name:" GridPane.columnIndex="0" GridPane.rowIndex="1" styleClass="field-label"/>
+                    <TextField fx:id="motherNameField" promptText="Mother's Name" GridPane.columnIndex="1" GridPane.rowIndex="1" styleClass="field-input"/>
+
+                    <Label text="Mother Tongue:" GridPane.columnIndex="0" GridPane.rowIndex="2" styleClass="field-label"/>
+                    <TextField fx:id="motherTongueField" promptText="Mother Tongue" GridPane.columnIndex="1" GridPane.rowIndex="2" styleClass="field-input"/>
+
+                    <Label text="Blood Group:" GridPane.columnIndex="0" GridPane.rowIndex="3" styleClass="field-label"/>
+                    <TextField fx:id="bloodGroupField" promptText="Blood Group" GridPane.columnIndex="1" GridPane.rowIndex="3" styleClass="field-input"/>
+
+                    <Label text="Educational Qualifications:" GridPane.columnIndex="0" GridPane.rowIndex="4" styleClass="field-label"/>
+                    <TextField fx:id="educationalQualificationsField" promptText="Educational Qualifications" GridPane.columnIndex="1" GridPane.rowIndex="4" styleClass="field-input"/>
+                </GridPane>
+            </VBox>
+        </VBox>
+
+        <!-- Right Column: Address Information, Contact Information, Photograph, Biometric -->
+        <VBox spacing="15" GridPane.columnIndex="1" GridPane.rowIndex="0" prefWidth="400">
+            <!-- Address Information -->
+            <VBox spacing="10">
+                <Label text="Address Information" styleClass="section-title"/>
+                
+                <!-- Permanent Address -->
+                <Label text="Permanent Address" styleClass="sub-section-title"/>
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <TextArea fx:id="permanentAddressArea" promptText="Permanent Address" wrapText="true" styleClass="field-input" prefHeight="80"/>
+                    <TextField fx:id="permanentPostalCodeField" promptText="Postal Code" styleClass="field-input" prefWidth="100"/>
+                </HBox>
+
+                <!-- Residential Address -->
+                <Label text="Residential Address" styleClass="sub-section-title"/>
+                <CheckBox fx:id="sameAsPermanentCheck" text="Same as Permanent Address"/>
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <TextArea fx:id="residentialAddressArea" promptText="Residential Address" wrapText="true" styleClass="field-input" prefHeight="80"/>
+                    <TextField fx:id="residentialPostalCodeField" promptText="Postal Code" styleClass="field-input" prefWidth="100"/>
+                </HBox>
+            </VBox>
+
+            <!-- Contact Information -->
+            <VBox spacing="10">
+                <Label text="Contact Information" styleClass="section-title"/>
+                <GridPane hgap="10" vgap="10">
+                    <Label text="Phone Number:" GridPane.columnIndex="0" GridPane.rowIndex="0" styleClass="field-label"/>
+                    <TextField fx:id="phoneField" promptText="Phone Number" GridPane.columnIndex="1" GridPane.rowIndex="0" styleClass="field-input"/>
+
+                    <Label text="Email:" GridPane.columnIndex="0" GridPane.rowIndex="1" styleClass="field-label"/>
+                    <TextField fx:id="emailField" promptText="Email" GridPane.columnIndex="1" GridPane.rowIndex="1" styleClass="field-input"/>
+
+                    <Label text="Nationality:" GridPane.columnIndex="0" GridPane.rowIndex="2" styleClass="field-label"/>
+                    <TextField fx:id="nationalityField" promptText="Nationality" text="Indian" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="2" styleClass="field-input"/>
+                </GridPane>
+            </VBox>
+
+            <!-- Photograph -->
+            <VBox spacing="10">
+                <Label text="Photograph" styleClass="section-title"/>
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <Button fx:id="photoButton" text="Upload Photo" styleClass="photo-button"/>
+                    <Label fx:id="photoLabel" text="No photo selected" styleClass="photo-label"/>
+                </HBox>
+            </VBox>
+
+            <!-- Biometric -->
+            <VBox spacing="10">
+                <Label text="Biometric" styleClass="section-title"/>
+                <CheckBox fx:id="biometricCheck" text="Biometric Scanned"/>
+            </VBox>
+        </VBox>
+    </GridPane>
+
+    <!-- Submit Button -->
+    <Button fx:id="submitButton" text="Generate Aadhar" styleClass="submit-button"/>
+</VBox>
