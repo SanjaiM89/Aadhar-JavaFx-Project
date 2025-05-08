@@ -196,5 +196,3 @@ This project is licensed under the **MIT License**.
 See the [LICENSE](./LICENSE) file for details.
 
 ---
-
-Would you like me to help generate a logo or banner for this GitHub project?
